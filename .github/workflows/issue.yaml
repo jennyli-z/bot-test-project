@@ -1,0 +1,15 @@
+name: 'issue-translator'
+on: 
+  issue_comment: 
+    types: [created]
+  issues: 
+    types: [opened]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: tomsun28/issues-translate-action@v2.6
+        with:
+          IS_MODIFY_TITLE: false
+          CUSTOM_BOT_NOTE: We suggest writing issues in English, so that more people in our community can read this. Thanks
